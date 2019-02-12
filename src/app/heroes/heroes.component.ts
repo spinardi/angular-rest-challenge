@@ -25,7 +25,8 @@ export class HeroesComponent implements OnInit {
   }
 
   getHeroes(): void {
-    this.mockHeroes = this.heroService.getHeroes();
+    this.heroService.getHeroes()
+      .subscribe(heroes => this.mockHeroes = heroes);
   }
 
 }
