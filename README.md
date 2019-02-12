@@ -24,7 +24,7 @@ Este repositório depende da versão **10.15.1 LTS** do redistribuível _Node.js
 O tutorial de início rápido utiliza o cliente _npm_ via linha de comando,
 instalado juntamente com o redistribuível _Node.js®_
 
-### Outros pré-requisitos não mandatórios:
+### Outros pré-requisitos (não mandatórios)
 - Git 2.20.1;
 - Google Chrome 72.0.3626.96 64 bits;
 - Visual Studio Code 1.31.0 
