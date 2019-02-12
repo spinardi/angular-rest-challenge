@@ -1,27 +1,32 @@
-# AngularTourOfHeroes
+# Angular: Tour of Heroes
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.1.
+Este repositório se destina a seguir os passos do tutorial _Tour of Heroes_ para
+_framework_ Angular, disponível em
+[angular.io](https://angular.io/tutorial)
 
-## Development server
+## Pré-requisitos
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Antes de mais nada, é preciso ter certeza de que o ambiente de desenvolvimento
+inclui o redistribuível _Node.js®_ e o pacote de gerenciamento _npm_ (ambos
+mandatórios).
 
-## Code scaffolding
+### - _Node.js®_
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Este repositório depende da versão **10.15.1 LTS** do redistribuível _Node.js®_
 
-## Build
+- Para verificar a versão instalada, execute `node -v` em uma janela de
+  comandos;
+- Para obter uma nova versão, utilize o link
+  [nodejs.org](https://nodejs.org/en/)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+### - _npm package manager_
 
-## Running unit tests
+O tutorial de início rápido utiliza o cliente _npm_ via linha de comando,
+instalado juntamente com o redistribuível _Node.js®_
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+### Outros pré-requisitos não mandatórios:
+- Git 2.20.1;
+- Google Chrome 72.0.3626.96 64 bits;
+- Visual Studio Code 1.31.0 
+  - Angular Extension Pack 7.1.0;
+- Windows NT x64 10.0.17763.
