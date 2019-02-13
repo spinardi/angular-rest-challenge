@@ -18,4 +18,9 @@ export class HeroService {
     return of(MOCK_HEROES);
   }
 
+  getHero(id: number): Observable<Hero> {
+    this.messageService.add(`HeroService: fetched hero id=${id}`);
+    return of(MOCK_HEROES.find(hero => hero.id === id));
+  }
+
 }
