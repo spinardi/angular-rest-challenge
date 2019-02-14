@@ -25,7 +25,7 @@ Este projeto também foi desenvolvido e testado com:
 - `cd angular-tour-of-heroes/angular-client`
 - `npm install` (para instalar as dependências do cliente)
 - `ng build --prod` (para construir o cliente)
-- `cd ../spring-boot-web-h2-server`
+- `cd ../spring-boot-web-h2-jpa-jdbc-server`
 - `mvn clean install` (para instalar as dependências e construir o servidor)
 - `mvn spring-boot:run`
 
