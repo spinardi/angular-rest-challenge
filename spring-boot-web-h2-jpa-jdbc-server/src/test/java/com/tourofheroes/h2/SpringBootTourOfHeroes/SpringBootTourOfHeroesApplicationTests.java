@@ -1,4 +1,4 @@
-package com.sbwh2.springbootwebh2;
+package com.tourofheroes.h2.SpringBootTourOfHeroes;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -7,7 +7,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class SpringBootWebH2ApplicationTests {
+public class SpringBootTourOfHeroesApplicationTests {
 
 	@Test
 	public void contextLoads() {
