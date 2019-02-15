@@ -1,27 +1,12 @@
-<h2>{{receita.nome | uppercase}}</h2>
-
-<div><span>(ID) </span>
-  <div>{{receita.id}}</div>
-</div>
-
-<div><span>(NOME) </span>
-  <div>{{receita.nome}}</div>
-</div>
-
-<div><span>(CALORIAS) </span>
-  <div>{{receita.calorias}}</div>
-</div>
-
-<div><span>(INGREDIENTES) </span>
-  <div>{{receita.ingrediente[0]}}</div>
-  <div>{{receita.ingrediente[1]}}</div>
-  <div>{{receita.ingrediente[2]}}</div>
-  <div>{{receita.ingrediente[3]}}</div>
-  <div>{{receita.ingrediente[4]}}</div>
-  <div>{{receita.ingrediente[5]}}</div>
-  <div>{{receita.ingrediente[6]}}</div>
-</div>
-
-<div><span>(MODO DE PREPARO) </span>
-  <div>{{receita.modoPreparo}}</div>
-</div>
+<h2>Minhas receitas</h2>
+<ul class="receitas">
+  <li *ngFor="let receita of receitas">
+    <span class="badge"> {{receita.id}} </span>
+    {{receita.nome}}
+        <!--
+        (CALORIAS) <div>{{receita.calorias}}</div>
+        (INGREDIENTES) <li *ngFor="let ing of receita.ingrediente">{{ing}}</li>
+        (MODO DE PREPARO) <div>{{receita.modoPreparo}}</div>
+        -->
+  </li>
+</ul>
