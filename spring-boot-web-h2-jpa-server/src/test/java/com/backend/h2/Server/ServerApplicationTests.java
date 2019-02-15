@@ -1,4 +1,4 @@
-package com.tourofheroes.h2.SpringBootTourOfHeroes;
+package com.backend.h2.Server;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -7,7 +7,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class SpringBootTourOfHeroesApplicationTests {
+public class ServerApplicationTests {
 
 	@Test
 	public void contextLoads() {
