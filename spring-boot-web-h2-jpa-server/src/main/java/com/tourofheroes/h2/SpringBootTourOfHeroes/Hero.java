@@ -9,8 +9,17 @@ public class Hero {
 
     @Id
     @GeneratedValue
-    private int id;
+    private Integer id;
     private String name;
+
+    public Hero() {
+
+    }
+
+    public Hero(Integer id, String name) {
+        this.id = id;
+        this.name = name;
+    }
 
     public Integer getId() {
         return id;

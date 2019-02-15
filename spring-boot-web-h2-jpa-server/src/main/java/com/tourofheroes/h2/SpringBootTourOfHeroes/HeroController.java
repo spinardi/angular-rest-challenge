@@ -3,8 +3,6 @@ package com.tourofheroes.h2.SpringBootTourOfHeroes;
 
 import java.util.List;
 
-import javax.print.PrintException;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -27,7 +25,7 @@ public class HeroController {
     }
 
     @GetMapping("/api/heroes/{id}")
-    private Hero getHero(@PathVariable("id") int id) {
+    private Hero getHero(@PathVariable("id") Integer id) {
         return heroService.getHeroById(id);
     }
 
@@ -37,7 +35,7 @@ public class HeroController {
     }
 
     @DeleteMapping("/api/heroes/{id}")
-    private void deleteHero(@PathVariable("id") int id) {
+    private void deleteHero(@PathVariable("id") Integer id) {
         heroService.delete(id);
     }
 
@@ -48,7 +46,7 @@ public class HeroController {
     }
 
     @PutMapping("/api/heroes")
-    private int updateHero(@RequestBody Hero hero) {
+    private Integer updateHero(@RequestBody Hero hero) {
         heroService.saveOrUpdate(hero);
         return hero.getId();
     }

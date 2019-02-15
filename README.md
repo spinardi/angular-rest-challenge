@@ -1,8 +1,8 @@
-# Angular: Tour of Heroes
+# Angular: Tour of Heroes + Spring Boot Web/H2/JPA
 
-Este repositório se destina a replicar (e estender) os exercícios propostos pelo
-tutorial _Tour of Heroes_ para _framework_ Angular, disponível em
-[angular.io](https://angular.io/tutorial)
+Este repositório estende o tutorial _Tour of Heroes_ para _framework_ Angular -
+disponível em [angular.io](https://angular.io/tutorial) - acrescentando um
+servidor Spring Boot Web/H2/JPA para testes de uso e integração.
 
 ## Pré-requisitos
 
@@ -25,9 +25,9 @@ Este projeto também foi desenvolvido e testado com:
 - `cd angular-tour-of-heroes/angular-client`
 - `npm install` (para instalar as dependências do cliente)
 - `ng build --prod` (para construir o cliente)
-- `cd ../spring-boot-web-h2-jpa-jdbc-server`
+- `cd ../spring-boot-web-h2-jpa-server`
 - `mvn clean install` (para instalar as dependências e construir o servidor)
-- `mvn spring-boot:run`
+- `mvn spring-boot:run` (para executar o servidor)
 
-Depois de construídos cliente e servidor, com projeto em execução,
-acesse: [http://localhost:8080](http://localhost:8080)
+Depois de construídos cliente e (em execução) servidor, acesse:
+[http://localhost:8080](http://localhost:8080)

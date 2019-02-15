@@ -26,7 +26,7 @@ public class HeroService {
         return heroes;
     }
 
-    public Hero getHeroById(int id) {
+    public Hero getHeroById(Integer id) {
         return heroRepository.findById(id).get();
     }
 
@@ -34,7 +34,7 @@ public class HeroService {
         heroRepository.save(Hero);
     }
 
-    public void delete(int id) {
+    public void delete(Integer id) {
         heroRepository.deleteById(id);
     }
 }
