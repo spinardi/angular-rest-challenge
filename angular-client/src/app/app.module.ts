@@ -7,6 +7,7 @@ import { AppRoutingModule }     from './app-routing.module';
 
 import { AppComponent }         from './app.component';
 import { MessagesComponent }    from './messages/messages.component';
+import { ReceitasComponent } from './receitas/receitas.component';
 
 @NgModule({
   imports: [
@@ -17,7 +18,8 @@ import { MessagesComponent }    from './messages/messages.component';
   ],
   declarations: [
     AppComponent,
-    MessagesComponent
+    MessagesComponent,
+    ReceitasComponent
   ],
   bootstrap: [ AppComponent ]
 })
