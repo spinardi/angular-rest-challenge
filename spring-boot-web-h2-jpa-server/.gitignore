@@ -1,5 +1,6 @@
-/target/
 !.mvn/wrapper/maven-wrapper.jar
+/h2/
+/target/
 
 ### STS ###
 .apt_generated
@@ -11,15 +12,15 @@
 .sts4-cache
 
 ### IntelliJ IDEA ###
-.idea
-*.iws
 *.iml
 *.ipr
+*.iws
+.idea
 
 ### NetBeans ###
-/nbproject/private/
-/nbbuild/
-/dist/
-/nbdist/
 /.nb-gradle/
 /build/
+/dist/
+/nbbuild/
+/nbdist/
+/nbproject/private/
