@@ -1,9 +1,42 @@
-<h2>Minhas receitas</h2>
-<ul class="receitas">
-  <li *ngFor="let receita of receitas">
-    <a routerLink="/receita/{{receita.id}}">
-      <span class="badge"> {{receita.id}} </span>
-      {{receita.nome}}
-    </a>
-  </li>
-</ul>
+<div *ngIf="url != '/criar'">
+  <h2>Minhas receitas</h2>
+  <ul class="receitas">
+    <li *ngFor="let receita of receitas">
+      <a routerLink="/receita/{{receita.id}}">
+        <span class="badge"> {{receita.id}} </span>
+        {{receita.nome}}
+      </a>
+    </li>
+  </ul>
+</div>
+
+<div *ngIf="url == '/criar'">
+  <h2>Criar uma receita</h2>
+  <table>
+    <tr>
+      <td>Nome</td>
+      <td><input [(ngModel)]="receita.nome"
+          required
+          placeholder="Nome">
+      </td>
+    <tr>
+      <td>Calorias</td>
+      <td><input [(ngModel)]="receita.calorias"
+        required pattern="[0-9]*"
+        placeholder="Calorias">
+    </td>
+    </tr>
+    <tr>
+      <td>Porções</td>
+      <td><input [(ngModel)]="receita.porcoes"
+        required
+        pattern="[0-9]*"
+        placeholder="Porções">
+    </td>
+    </tr>
+  </table>
+
+  <div>
+    <button (click)="addReceita(receita)">Continuar</button>
+  </div>
+</div>

@@ -1,26 +1,30 @@
 package com.backend.h2.Server;
 
-import java.util.ArrayList;
-import java.util.List;
+/* import java.util.ArrayList; */
+/* import java.util.List; */
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.CommandLineRunner;
+/* import org.springframework.beans.factory.annotation.Autowired; */
+/* import org.springframework.boot.CommandLineRunner; */
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class ServerApplication implements CommandLineRunner {
+/* public class ServerApplication implements CommandLineRunner { */
+public class ServerApplication {
 
+    /*
     @Autowired
     private ReceitaRepository receitaRepository;
+    */
 
 	public static void main(String[] args) {
 		SpringApplication.run(ServerApplication.class, args);
     }
     
+    /*
     @Override
     public void run(String... args) throws Exception {
-        /* Clean database tables */
+        // Clean database tables
         receitaRepository.deleteAll();
 
         List<String> ingrediente = new ArrayList<String>();
@@ -32,12 +36,13 @@ public class ServerApplication implements CommandLineRunner {
         ingrediente.add("1 colher (sopa) de fermento em pó");
         ingrediente.add("1 pitada de sal");
 
-        Receita receita = new Receita(16, "Bolo de cenoura", 333, 0,
+        Receita receita = new Receita(16, "Bolo de cenoura", 333, 20,
             ingrediente, "Bater no liquidificador todos os ingredientes, " +
             "acrescentando a farinha aos poucos");
 
-        /* Insert some data in the database */
+        // Insert some data in the database
         receitaRepository.save(receita);
     }
+    */
 
 }

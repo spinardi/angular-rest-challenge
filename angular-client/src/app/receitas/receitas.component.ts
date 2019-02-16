@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, SystemJsNgModuleLoader } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { Receita } from '../receita';
 import { ReceitaService } from '../receita.service';
@@ -11,16 +12,36 @@ import { ReceitaService } from '../receita.service';
 export class ReceitasComponent implements OnInit {
 
   receitas: Receita[];
+  receita: Receita;
+  url: string = 'disabled';
 
-  constructor(private receitaService: ReceitaService) { }
+  constructor(
+    private route: Router,
+    private receitaService: ReceitaService
+  ) { }
 
   ngOnInit() {
-    this.getReceitas();
+    this.url = this.route.url;
+
+    if (this.url != '/criar') {
+      this.getReceitas();
+    }
+    else {
+      this.receita = new Receita;
+    }
   }
 
   getReceitas(): void {
     this.receitaService.getReceitas()
       .subscribe(receitas => this.receitas = receitas);
+  }
+
+  addReceita(receita: Receita): void {
+
+    /* TODO: validações */
+
+    this.receitaService.addReceita(receita)
+      .subscribe(receita => {this.receitas.push(receita)});
   }
 
 }

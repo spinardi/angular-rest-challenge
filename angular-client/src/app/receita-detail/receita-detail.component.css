@@ -42,6 +42,8 @@ input {
 
 button {
   margin-top: 20px;
+  margin-right: 20px;
+  margin-bottom: 20px;
   font-family: Arial;
   background-color: #eee;
   border: none;

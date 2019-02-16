@@ -3,27 +3,30 @@
   <table>
     <tr>
       <td>Nome</td>
-      <td><input [(ngModel)]="receita.nome"></td>
+      <td><input [(ngModel)]="receita.nome" readonly></td>
     <tr>
       <td>Calorias</td>
-      <td *ngIf="receita.calorias; else tdElse"><input [(ngModel)]="receita.calorias"></td>
-      <ng-template #tdElse><input placeholder="Não informado"></ng-template>
+      <td *ngIf="receita.calorias; else tdElse"><input [(ngModel)]="receita.calorias" readonly></td>
+      <ng-template #tdElse><input placeholder="Não informado" readonly></ng-template>
     </tr>
     <tr>
       <td>Porções</td>
-      <td><input [(ngModel)]="receita.porcoes"></td>
+      <td><input [(ngModel)]="receita.porcoes" readonly></td>
     </tr>
     <tr>
       <td>Ingrediente(s)</td>
       <li *ngFor="let ing of receita.ingrediente"
         style="list-style-type: none">
-        <td><input [(ngModel)]=ing></td>
+        <td><input [(ngModel)]=ing readonly></td>
       </li>
     </tr>
     <tr>
       <td>Modo de preparo</td>
-      <td><textarea rows="5" [(ngModel)]="receita.modoPreparo"></textarea></td>
+      <td><textarea rows="5" [(ngModel)]="receita.modoPreparo" readonly></textarea></td>
     </tr>
   </table>
+  <!-- Não há expectativa de endpoints PUT para atualização de dados!
+  <button (click)="save()">Salvar</button>
+  -->
   <button (click)="goBack()">Voltar</button>
 </div>
