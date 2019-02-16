@@ -4,6 +4,7 @@ export const RECEITAS: Receita[] = [
   {
     id: 16,
     nome: 'Bolo de cenoura',
+    porcoes: 0,
     calorias: 333,
     ingrediente: [
       '3 cenouras médias raspadas e picadas',
@@ -20,6 +21,7 @@ export const RECEITAS: Receita[] = [
   {
     id: 17,
     nome: 'Bolinho de chuva',
+    porcoes: 15,
     calorias: 0,
     ingrediente: [
       '2 xícaras de chá de farinho de trigo',
@@ -36,6 +38,7 @@ export const RECEITAS: Receita[] = [
   {
     id: 18,
     nome: 'Chicabon caseiro',
+    porcoes: 4,
     calorias: 0,
     ingrediente: [
       '2 xícaras de leite',
@@ -50,6 +53,7 @@ export const RECEITAS: Receita[] = [
   {
     id: 19,
     nome: 'Pavê de bis',
+    porcoes: 8,
     calorias: 0,
     ingrediente: [
       '1 lata de leite condensado',

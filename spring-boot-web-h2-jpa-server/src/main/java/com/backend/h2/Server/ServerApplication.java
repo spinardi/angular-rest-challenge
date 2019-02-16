@@ -32,9 +32,9 @@ public class ServerApplication implements CommandLineRunner {
         ingrediente.add("1 colher (sopa) de fermento em pó");
         ingrediente.add("1 pitada de sal");
 
-        Receita receita = new Receita(16, "Bolo de cenoura", 333, ingrediente,
-            "Bater no liquidificador todos os ingredientes, acrescentando a " +
-            "farinha aos poucos");
+        Receita receita = new Receita(16, "Bolo de cenoura", 333, 0,
+            ingrediente, "Bater no liquidificador todos os ingredientes, " +
+            "acrescentando a farinha aos poucos");
 
         /* Insert some data in the database */
         receitaRepository.save(receita);

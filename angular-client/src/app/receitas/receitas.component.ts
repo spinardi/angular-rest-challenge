@@ -13,10 +13,15 @@ import { RECEITAS } from '../mock-receitas';
 export class ReceitasComponent implements OnInit {
 
   receitas = RECEITAS;
+  selectedReceita: Receita;
 
   constructor() { }
 
   ngOnInit() {
+  }
+
+  onSelect(receita: Receita): void {
+    this.selectedReceita = receita;
   }
 
 }

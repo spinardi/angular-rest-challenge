@@ -15,22 +15,24 @@ public class ReceitaService {
         return receitaRepository.findAll();
     }
 
-    public Receita getReceitaById(int iID) {
-        return receitaRepository.findById(iID).get();
+    public Receita getReceitaById(int id) {
+        return receitaRepository.findById(id).get();
     }
 
     public void saveOrUpdate(Receita receita) {
         receitaRepository.save(receita);
     }
 
-    public void saveIngrediente(int iID, List<String> ingrediente) {
-        Receita receita = receitaRepository.findById(iID).get();
-        receita.setIngrediente(ingrediente);
+    public void saveIngrediente(int id, List<String> ingrediente) {
+        Receita receita = receitaRepository.findById(id).get();
+        List<String> ingList = receita.getIngrediente();
+        ingrediente.forEach(i -> ingList.add(i));
+        receita.setIngrediente(ingList);
         saveOrUpdate(receita);
     }
 
-    public void saveModoPreparo(int iID, String sModoPreparo) {
-        Receita receita = receitaRepository.findById(iID).get();
+    public void saveModoPreparo(int id, String sModoPreparo) {
+        Receita receita = receitaRepository.findById(id).get();
         receita.setModoPreparo(sModoPreparo);
         saveOrUpdate(receita);
     }

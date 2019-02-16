@@ -19,13 +19,17 @@ public class Receita {
 
     private String nome;
     private Integer calorias;
+    private Integer porcoes;
 
     @ElementCollection
-    @CollectionTable(name = "INGREDIENTE", joinColumns = @JoinColumn(name = "RECEITA"))
+    @CollectionTable(name = "INGREDIENTE", joinColumns = @JoinColumn(name = "ID"))
     @Column(name = "NOME")
     private List<String> ingrediente;
 
     private String modoPreparo;
+
+    /* Getters and Setters */
+    /* ============================== */
 
     public Integer getId() {
         return id;
@@ -51,6 +55,14 @@ public class Receita {
         this.id = calorias;
     }
 
+    public Integer getPorcoes() {
+        return porcoes;
+    }
+
+    public void setPorcoes(Integer porcoes) {
+        this.id = porcoes;
+    }
+
     public List<String> getIngrediente() {
         return ingrediente;
     }
@@ -67,13 +79,18 @@ public class Receita {
         this.modoPreparo = modoPreparo;
     }
 
+    /* Constructors */
+    /* ============================== */
+
     public Receita() {
 
     }
 
-    public Receita(Integer id, String nome, Integer calorias, List<String> ingrediente, String modoPreparo) {
+    public Receita(Integer id, String nome, Integer porcoes, Integer calorias,
+        List<String> ingrediente, String modoPreparo) {
         this.id = id;
         this.nome = nome;
+        this.porcoes = porcoes;
         this.calorias = calorias;
         this.ingrediente = ingrediente;
         this.modoPreparo = modoPreparo;

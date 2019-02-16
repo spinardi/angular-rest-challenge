@@ -8,6 +8,7 @@ import { AppRoutingModule }     from './app-routing.module';
 import { AppComponent }         from './app.component';
 import { MessagesComponent }    from './messages/messages.component';
 import { ReceitasComponent } from './receitas/receitas.component';
+import { ReceitaDetailComponent } from './receita-detail/receita-detail.component';
 
 @NgModule({
   imports: [
@@ -19,7 +20,8 @@ import { ReceitasComponent } from './receitas/receitas.component';
   declarations: [
     AppComponent,
     MessagesComponent,
-    ReceitasComponent
+    ReceitasComponent,
+    ReceitaDetailComponent
   ],
   bootstrap: [ AppComponent ]
 })
