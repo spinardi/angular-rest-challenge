@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+
 import { Receita } from '../receita';
 import { ReceitaService } from '../receita.service';
 

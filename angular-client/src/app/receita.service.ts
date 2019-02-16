@@ -16,4 +16,10 @@ export class ReceitaService {
     this.messageService.add('HeroService: fetched heroes');
     return of(RECEITAS);
   }
+
+  getReceita(id: number): Observable<Receita> {
+    this.messageService.add(`HeroService: fetched hero id=${id}`);
+    return of(RECEITAS.find(receita => receita.id === id));
+  }
+
 }

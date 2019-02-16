@@ -1,7 +1,8 @@
 <div class="grid grid-pad">
   <div *ngIf="receitas?.length > 3"
     class="dashboard">
-    <a *ngFor="let receita of receitas" class="col-1-4">
+    <a *ngFor="let receita of receitas" class="col-1-4"
+      routerLink="/receita/{{receita.id}}">
       <div class="module receita">
         <h4>{{receita.nome | uppercase}}</h4>
       </div>

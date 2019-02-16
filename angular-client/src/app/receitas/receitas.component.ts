@@ -11,16 +11,11 @@ import { ReceitaService } from '../receita.service';
 export class ReceitasComponent implements OnInit {
 
   receitas: Receita[];
-  selectedReceita: Receita;
 
   constructor(private receitaService: ReceitaService) { }
 
   ngOnInit() {
     this.getReceitas();
-  }
-
-  onSelect(receita: Receita): void {
-    this.selectedReceita = receita;
   }
 
   getReceitas(): void {

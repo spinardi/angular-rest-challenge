@@ -1,6 +1,9 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
 
 import { Receita } from '../receita';
+import { ReceitaService }  from '../receita.service';
 
 @Component({
   selector: 'app-receita-detail',
@@ -11,9 +14,24 @@ export class ReceitaDetailComponent implements OnInit {
 
   @Input() receita: Receita;
 
-  constructor() { }
+  constructor(
+    private route: ActivatedRoute,
+    private receitaService: ReceitaService,
+    private location: Location
+  ) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
+    this.getReceita();
+  }
+
+  getReceita(): void {
+    const id = +this.route.snapshot.paramMap.get('id');
+    this.receitaService.getReceita(id)
+      .subscribe(receita => this.receita = receita);
+  }
+
+  goBack(): void {
+    this.location.back();
   }
 
 }

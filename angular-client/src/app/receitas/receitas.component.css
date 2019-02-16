@@ -1,31 +1,19 @@
 /* ReceitasComponent's private CSS styles */
 
-.selected {
-  background-color: #CFD8DC !important;
-  color: white;
-}
-
 .receitas {
   margin: 0 0 2em 0;
   list-style-type: none;
   padding: 0;
   width: 15em;
 }
-
 .receitas li {
-  cursor: pointer;
   position: relative;
-  left: 0;
+  cursor: pointer;
   background-color: #EEE;
   margin: .5em;
   padding: .3em 0;
   height: 1.6em;
   border-radius: 4px;
-}
-
-.receitas li.selected:hover {
-  background-color: #BBD8DC !important;
-  color: white;
 }
 
 .receitas li:hover {
@@ -34,9 +22,16 @@
   left: .1em;
 }
 
-.receitas .text {
+.receitas a {
+  color: #888;
+  text-decoration: none;
   position: relative;
-  top: -3px;
+  display: block;
+  width: 250px;
+}
+
+.receitas a:hover {
+  color:#607D8B;
 }
 
 .receitas .badge {
@@ -50,6 +45,8 @@
   left: -1px;
   top: -4px;
   height: 1.8em;
+  min-width: 16px;
+  text-align: right;
   margin-right: .8em;
   border-radius: 4px 0 0 4px;
 }
