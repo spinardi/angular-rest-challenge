@@ -1,0 +1,10 @@
+<div class="grid grid-pad">
+  <div *ngIf="receitas?.length > 3"
+    class="dashboard">
+    <a *ngFor="let receita of receitas" class="col-1-4">
+      <div class="module receita">
+        <h4>{{receita.nome | uppercase}}</h4>
+      </div>
+    </a>
+  </div>
+</div>

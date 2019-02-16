@@ -9,6 +9,7 @@ import { AppComponent }         from './app.component';
 import { MessagesComponent }    from './messages/messages.component';
 import { ReceitasComponent } from './receitas/receitas.component';
 import { ReceitaDetailComponent } from './receita-detail/receita-detail.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   imports: [
@@ -21,7 +22,8 @@ import { ReceitaDetailComponent } from './receita-detail/receita-detail.componen
     AppComponent,
     MessagesComponent,
     ReceitasComponent,
-    ReceitaDetailComponent
+    ReceitaDetailComponent,
+    DashboardComponent
   ],
   bootstrap: [ AppComponent ]
 })
