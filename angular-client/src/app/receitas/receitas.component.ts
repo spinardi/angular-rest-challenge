@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { Receita } from '../receita';
-
-/* TODO: capturar da base de dados via servidor */
-import { RECEITAS } from '../mock-receitas';
+import { ReceitaService } from '../receita.service';
 
 @Component({
   selector: 'app-receitas',
@@ -12,16 +10,22 @@ import { RECEITAS } from '../mock-receitas';
 })
 export class ReceitasComponent implements OnInit {
 
-  receitas = RECEITAS;
+  receitas: Receita[];
   selectedReceita: Receita;
 
-  constructor() { }
+  constructor(private receitaService: ReceitaService) { }
 
   ngOnInit() {
+    this.getReceitas();
   }
 
   onSelect(receita: Receita): void {
     this.selectedReceita = receita;
+  }
+
+  getReceitas(): void {
+    this.receitaService.getReceitas()
+      .subscribe(receitas => this.receitas = receitas);
   }
 
 }

@@ -1,0 +1,61 @@
+/* HeroDetailComponent's private CSS styles */
+
+table {
+  width: 50%;
+}
+
+table, th, td {
+  border-collapse: collapse;
+}
+
+th, td, td {
+  text-align: left;
+  vertical-align: top;
+  color: #607D8B;
+  font-weight: bold;
+}
+
+label {
+  display: inline-block;
+  width: 25em;
+  margin: .25em;
+  color: #607D8B;
+  font-weight: bold;
+  padding-right: 5em;
+}
+
+input, textarea {
+  width: 400px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: solid #eeeeee 1px;
+  resize: none;
+}
+
+input {
+  height: 1.25em;
+}
+
+button {
+  margin-top: 20px;
+  font-family: Arial;
+  background-color: #eee;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer; cursor: hand;
+}
+
+button:hover {
+  background-color: #cfd8dc;
+}
+
+button:disabled {
+  background-color: #eee;
+  color: #ccc;
+  cursor: auto;
+}

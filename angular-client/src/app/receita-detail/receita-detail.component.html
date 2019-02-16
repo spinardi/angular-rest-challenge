@@ -1,34 +1,28 @@
 <div *ngIf="receita">
   <h2>{{receita.nome | uppercase}}</h2>
-  <div>
-    <label>Nome:
-      <input [(ngModel)]="receita.nome" placeholder="nome">
-    </label>
-    <label>Calorias:
-      <input [(ngModel)]="receita.calorias" placeholder="calorias">
-    </label>
-    <div>
-      <label>Porções:
-        <input [(ngModel)]="receita.porcoes" placeholder="porcoes">
-      </label>
-    </div>
-    <div>
-      (INGREDIENTES)
-      <div>
-        <li *ngFor="let ing of receita.ingrediente">
-          <label>
-            <input [(ngModel)]=ing placeholder="ingrediente">
-          </label>
-        </li>
-      </div>
-    </div>
-    <div>
-      Modo de preparo:
-      <div>
-        <label>
-          <input [(ngModel)]="receita.modoPreparo" placeholder="modoPreparo">
-        </label>
-      </div>
-    </div>
-  </div>
+  <table>
+    <tr>
+      <td>Nome</td>
+      <td><input [(ngModel)]="receita.nome"></td>
+    <tr>
+      <td>Calorias</td>
+      <td *ngIf="receita.calorias; else tdElse"><input [(ngModel)]="receita.calorias"></td>
+      <ng-template #tdElse><input placeholder="Não informado"></ng-template>
+    </tr>
+    <tr>
+      <td>Porções</td>
+      <td><input [(ngModel)]="receita.porcoes"></td>
+    </tr>
+    <tr>
+      <td>Ingrediente(s)</td>
+      <li *ngFor="let ing of receita.ingrediente"
+        style="list-style-type: none">
+        <td><input [(ngModel)]=ing></td>
+      </li>
+    </tr>
+    <tr>
+      <td>Modo de preparo</td>
+      <td><textarea rows="5" [(ngModel)]="receita.modoPreparo"></textarea></td>
+    </tr>
+  </table>
 </div>

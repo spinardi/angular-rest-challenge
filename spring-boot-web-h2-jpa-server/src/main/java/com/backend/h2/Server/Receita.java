@@ -28,6 +28,23 @@ public class Receita {
 
     private String modoPreparo;
 
+    /* Constructors */
+    /* ============================== */
+
+    public Receita() {
+
+    }
+
+    public Receita(Integer id, String nome, Integer porcoes, Integer calorias,
+        List<String> ingrediente, String modoPreparo) {
+        this.id = id;
+        this.nome = nome;
+        this.porcoes = porcoes;
+        this.calorias = calorias;
+        this.ingrediente = ingrediente;
+        this.modoPreparo = modoPreparo;
+    }
+
     /* Getters and Setters */
     /* ============================== */
 
@@ -76,23 +93,6 @@ public class Receita {
     }
 
     public void setModoPreparo(String modoPreparo) {
-        this.modoPreparo = modoPreparo;
-    }
-
-    /* Constructors */
-    /* ============================== */
-
-    public Receita() {
-
-    }
-
-    public Receita(Integer id, String nome, Integer porcoes, Integer calorias,
-        List<String> ingrediente, String modoPreparo) {
-        this.id = id;
-        this.nome = nome;
-        this.porcoes = porcoes;
-        this.calorias = calorias;
-        this.ingrediente = ingrediente;
         this.modoPreparo = modoPreparo;
     }
 }
