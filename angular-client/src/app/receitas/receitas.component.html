@@ -14,21 +14,21 @@
   <h2>Criar uma receita</h2>
   <table>
     <tr>
-      <td>Nome</td>
+      <td class="td1">Nome</td>
       <td><input [(ngModel)]="receita.nome"
           required
           placeholder="Nome">
       </td>
     <tr>
-      <td>Calorias</td>
-      <td><input [(ngModel)]="receita.calorias"
+      <td class="td1">Calorias</td>
+      <td><input type="number" [(ngModel)]="receita.calorias"
         required pattern="[0-9]*"
         placeholder="Calorias">
     </td>
     </tr>
     <tr>
-      <td>Porções</td>
-      <td><input [(ngModel)]="receita.porcoes"
+      <td class="td1">Porções</td>
+      <td><input type="number" [(ngModel)]="receita.porcoes"
         required
         pattern="[0-9]*"
         placeholder="Porções">
@@ -36,7 +36,31 @@
     </tr>
   </table>
 
-  <div>
-    <button (click)="addReceita(receita)">Continuar</button>
+  <div *ngIf="!isReceitaCreated">
+    <div>
+      <button (click)="addReceita()">Continuar</button>
+    </div>
+  </div>
+
+  <div *ngIf="isReceitaCreated">
+    <app-receita-ingrediente
+      [(ingredientes)]=receita.ingrediente
+      [(isIngredientesSaved)]=isIngredientesSaved>
+    </app-receita-ingrediente>
+    <div *ngIf="!isIngredientesSaved">
+      <button *ngIf="receita.ingrediente.length >= 1" (click)="saveIngredientes()">Salvar ingrediente(s)</button>
+    </div>
+  </div>
+
+  <div *ngIf="isIngredientesSaved">
+    <table>
+      <tr>
+        <td class="td1">Modo de preparo</td>
+        <td><textarea rows="5" [(ngModel)]="receita.modoPreparo"></textarea></td>
+      </tr>
+    </table>
+    <div>
+      <button (click)="saveModoPreparo()">Salvar modo de preparo</button>
+    </div>
   </div>
 </div>

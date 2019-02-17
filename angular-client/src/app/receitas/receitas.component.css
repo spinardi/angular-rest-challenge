@@ -1,14 +1,18 @@
 /* ReceitasComponent's private CSS styles */
 
 table {
-  width: 50%;
+  width: 666px;
+}
+
+.td1 {
+  width: 222px;
 }
 
 table, th, td {
   border-collapse: collapse;
 }
 
-th, td, td {
+th, td {
   text-align: left;
   vertical-align: top;
   color: #607D8B;

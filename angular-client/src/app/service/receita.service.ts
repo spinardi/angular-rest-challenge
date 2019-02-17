@@ -3,10 +3,7 @@ import { Observable, of } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError, map, tap } from 'rxjs/operators';
 
-import { Receita } from './receita';
-import { RECEITAS } from './mock-receitas';
-import { MessageService } from './message.service';
-
+import { Receita } from '../receita';
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
 };
@@ -17,15 +14,13 @@ const httpOptions = {
 export class ReceitaService {
 
   constructor(
-    private http: HttpClient,
-    private messageService: MessageService
+    private http: HttpClient
   ) { }
 
   /** GET */
   getReceitas(): Observable<Receita[]> {
     return this.http.get<Receita[]>('api/receitas')
       .pipe(
-        tap(_ => this.log('fetched receitas')),
         catchError(this.handleError('getReceitas', []))
       );
   }
@@ -34,7 +29,6 @@ export class ReceitaService {
   getReceita(id: number): Observable<Receita> {
     return this.http.get<Receita>(`api/receita/${id}`)
       .pipe(
-        tap(_ => this.log(`fetched receita id=${id}`)),
         catchError(this.handleError<Receita>(`getReceita id=${id}`))
       );
   }
@@ -43,13 +37,24 @@ export class ReceitaService {
   addReceita(receita: Receita): Observable<Receita> {
     return this.http.post<Receita>(`api/receita`, receita, httpOptions)
       .pipe(
-        tap((newReceita: Receita) => this.log(`added receita w/ id=${newReceita.id}`)),
         catchError(this.handleError<Receita>('addReceita'))
       )
   }
 
-  private log(message: string) {
-    this.messageService.add(`ReceitaService: ${message}`);
+  /** POST */
+  saveIngredientes(receita: Receita): Observable<boolean> {
+    return this.http.post<boolean>(`api/receita/${receita.id}/ingredientes`, receita.ingrediente, httpOptions)
+      .pipe(
+        catchError(this.handleError<boolean>('saveIngredientes'))
+      )
+  }
+
+  /** POST */
+  saveModoPreparo(receita: Receita): Observable<Boolean> {
+    return this.http.post<boolean>(`api/receita/${receita.id}/modopreparo`, receita.modoPreparo, httpOptions)
+      .pipe(
+        catchError(this.handleError<boolean>('saveModoPreparo'))
+      )
   }
 
   /**
@@ -62,8 +67,6 @@ export class ReceitaService {
     return (error: any): Observable<T> => {
 
       console.error(error);
-
-      this.log(`${operation} failed: ${error.message}`);
 
       // Let the app keep running by returning an empty result.
       return of(result as T);

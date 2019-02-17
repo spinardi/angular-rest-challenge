@@ -7,6 +7,7 @@ import javax.persistence.Column;
 import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 
@@ -14,11 +15,16 @@ import javax.persistence.JoinColumn;
 public class Receita {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy=GenerationType.AUTO)
     private Integer id;
 
+    @Column(name = "NOME")
     private String nome;
+
+    @Column(name = "CALORIAS")
     private Integer calorias;
+
+    @Column(name = "PORCOES")
     private Integer porcoes;
 
     @ElementCollection
@@ -26,6 +32,7 @@ public class Receita {
     @Column(name = "NOME")
     private List<String> ingrediente;
 
+    @Column(name = "MODOPREPARO")
     private String modoPreparo;
 
     /* Constructors */
@@ -69,7 +76,7 @@ public class Receita {
     }
 
     public void setCalorias(Integer calorias) {
-        this.id = calorias;
+        this.calorias = calorias;
     }
 
     public Integer getPorcoes() {
@@ -77,7 +84,7 @@ public class Receita {
     }
 
     public void setPorcoes(Integer porcoes) {
-        this.id = porcoes;
+        this.porcoes = porcoes;
     }
 
     public List<String> getIngrediente() {

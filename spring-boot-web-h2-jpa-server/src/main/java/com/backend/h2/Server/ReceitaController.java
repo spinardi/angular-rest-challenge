@@ -32,20 +32,20 @@ public class ReceitaController {
     }
 
     @PostMapping("/api/receita/{id}/ingredientes")
-    private List<String> saveIngrediente(
+    private Boolean saveIngrediente(
         @PathVariable("id") int id,
         @RequestBody List<String> ingrediente
     ) {
         receitaService.saveIngrediente(id, ingrediente);
-        return ingrediente;
+        return true;
     }
 
     @PostMapping("/api/receita/{id}/modopreparo")
-    private String saveModoPreparo(
+    private Boolean saveModoPreparo(
         @PathVariable("id") int id,
         @RequestBody String modoPreparo
     ) {
         receitaService.saveModoPreparo(id, modoPreparo);
-        return modoPreparo;
+        return true;
     }
 }

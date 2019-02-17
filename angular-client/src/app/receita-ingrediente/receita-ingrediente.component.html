@@ -1,0 +1,30 @@
+<div *ngIf="ingredientes.length >= 1">
+  <table>
+    <tr>
+      <td class="td1">Ingrediente(s)</td>
+      <li *ngFor="let ingrediente of ingredientes"
+        style="list-style-type: none">
+        <td><input [(ngModel)]=ingrediente readonly></td>
+      </li>
+    </tr>
+    <tr *ngIf="!isIngredientesSaved">
+      <td></td>
+      <td>
+        <input [(ngModel)]="descricao" required>
+        <button (click)="saveIngredientes()"> + </button>
+      </td>
+    </tr>
+  </table>
+</div>
+
+<div *ngIf="ingredientes.length < 1">
+  <table>
+    <tr>
+      <td class="td1">Ingrediente(s)</td>
+      <td>
+        <input [(ngModel)]="descricao" required>
+        <button (click)="saveIngredientes()"> + </button>
+      </td>
+    </tr>
+  </table>
+</div>

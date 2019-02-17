@@ -35,7 +35,7 @@ permitir a visualização em detalhes
 - _Node.js®_ **10.15.1 LTS** [[nodejs.org](https://nodejs.org/)]
   - _npm package manager_
 - _Apache Maven_ **3.6.0** [[maven.apache.org](https://maven.apache.org/index.html)]
-- JA SE Development Kit **11.0.2** [[oracle.com](https://www.oracle.com/technetwork/java/javase/downloads/index.html)]
+- JAVA SE Development Kit **11.0.2** [[oracle.com](https://www.oracle.com/technetwork/java/javase/downloads/index.html)]
 
 Este projeto também é mantido e testado com:
 
@@ -48,7 +48,7 @@ Este projeto também é mantido e testado com:
 ## Operacionalização
 
 - `git clone ...` (para criar uma cópia local)
-- `cd angular-tour-of-heroes/angular-client`
+- `cd angular-rest-challenge/angular-client`
 - `npm install` (para instalar as dependências do cliente)
 - `ng build --prod` (para construir o cliente)
 - `cd ../spring-boot-web-h2-jpa-server`

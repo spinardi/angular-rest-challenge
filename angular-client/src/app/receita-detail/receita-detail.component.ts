@@ -3,7 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 
 import { Receita } from '../receita';
-import { ReceitaService }  from '../receita.service';
+import { ReceitaService }  from '../service/receita.service';
 
 @Component({
   selector: 'app-receita-detail',
