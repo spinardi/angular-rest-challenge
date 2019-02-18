@@ -27,7 +27,9 @@ export class ReceitaDetailComponent implements OnInit {
   getReceita(): void {
     const id = +this.route.snapshot.paramMap.get('id');
     this.receitaService.getReceita(id)
-      .subscribe(receita => this.receita = receita);
+      .subscribe(receita => {
+        this.receita = receita
+      });
   }
 
   goBack(): void {

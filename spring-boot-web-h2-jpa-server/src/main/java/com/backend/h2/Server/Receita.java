@@ -32,7 +32,7 @@ public class Receita {
     @Column(name = "NOME")
     private List<String> ingrediente;
 
-    @Column(name = "MODOPREPARO")
+    @Column(name = "MODO_PREPARO", length = 1275)
     private String modoPreparo;
 
     /* Constructors */

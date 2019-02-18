@@ -21,7 +21,13 @@ export class ReceitaIngredienteComponent {
       return;
     }
 
-    if (this.descricao.trim().length) {
+    length = this.descricao.trim().length;
+
+    if (length >= 255) {
+      this.descricao = this.descricao.substring(0, 255);
+    }
+
+    if (length) {
       this.ingredientes.push(this.descricao);
       this.ingredienteEvent.emit(this.ingredientes);
     }

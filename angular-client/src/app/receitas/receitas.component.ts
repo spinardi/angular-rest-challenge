@@ -76,13 +76,21 @@ export class ReceitasComponent implements OnInit {
   }
 
   saveModoPreparo(): void {
+    var length = 0;
+
     if (this.receita.modoPreparo === null || this.receita.modoPreparo === undefined) {
       return;
     }
 
-    if (!this.receita.modoPreparo.trim().length) {
+    length = this.receita.modoPreparo.trim().length;
+
+    if (!length) {
       this.receita.modoPreparo = "";
       return;
+    }
+
+    if (length >= 1275) {
+      this.receita.modoPreparo = this.receita.modoPreparo.substring(0, 1275);
     }
 
     this.receitaService.saveModoPreparo(this.receita)
